@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>E-Alcohol</title>
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #36393e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row; /* Ustawia formularze obok siebie */
+        gap: 20px; /* Odstęp między formularzami */
+    }
+
+    form {
+        background-color: #424549;
+        border: #1e2124 solid 5px;
+        border-radius: 20px;
+        padding: 20px 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 300px; /* Szerokość formularza */
+        display: flex;
+        flex-direction: column; /* Ustaw elementy wewnątrz formularza w kolumnie */
+        height: 100%;
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: bold;
+        color: #ffffff;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #1e2124;
+        background-color: #7289da;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        border-color: #7289da;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    button {
+        background-color: #7289da;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        margin-top: auto; /* Ustawia przycisk na dole formularza */
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        color: #7289da;
+        transition: color 0.3s;
+    }
+
+    a:hover {
+        color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<h1>Welcome to E-Alcohol!!!</h1>
+<h2>Login or register to continue.</h2>
+<div class="container">
+  <form method="post">
+    <label for="name">User name:</label>
+    <input type="text" id="name" required />
+    <br />
+    <label for="password">Password:</label>
+    <input type="password" id="password" required />
+    <br />
+    <button type="submit">Register</button>
+  </form>
+  <form method="post">
+    <label for="user_name">User name:</label>
+    <input type="text" id="user_name" required />
+    <br />
+    <label for="user_haslo">Password:</label>
+    <input type="password" id="user_haslo" required />
+    <br />
+    <button type="submit">Log in</button>
+  </form>
+</div>
+</body>
+</html>
