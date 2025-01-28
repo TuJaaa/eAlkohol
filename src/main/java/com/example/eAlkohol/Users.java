@@ -2,13 +2,19 @@ package com.example.eAlkohol;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "Users")
 public class Users {
+    @ManyToOne
+    @JoinColumn(name="id_u", nullable=false)
+    private Comments comments;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
-    private int id;
+    private int id_user;
 
     @Column(name = "NAME")
     private String name;
@@ -18,11 +24,11 @@ public class Users {
     private String role;
 
     public int getId() {
-        return id;
+        return id_user;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id_user = id_user;
     }
 
     public String getName() {
