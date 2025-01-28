@@ -6,11 +6,11 @@ import java.util.Set;
 @Entity
 @Table(name = "Comments")
 public class Comments {
-    @OneToMany(mappedBy="comments")
-    private Set<Alcoholinfo> alcohol;
+//    @OneToMany(mappedBy="comments")
+//    private Set<Alcoholinfo> alcohol;
 
-    @OneToMany(mappedBy="comments")
-    private Set<Users> users;
+//    @OneToMany(mappedBy="comments")
+//    private Set<User> users;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
