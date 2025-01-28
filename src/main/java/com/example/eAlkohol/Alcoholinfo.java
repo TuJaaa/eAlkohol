@@ -5,9 +5,9 @@ import java.util.Set;
 @Entity
 @Table(name = "Alcohol")
 public class Alcoholinfo {
-    @ManyToOne
-    @JoinColumn(name="id_a", nullable=false)
-    private Comments comments;
+//    @ManyToOne
+//    @JoinColumn(name="id_a", nullable=false)
+//    private Comments comments;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

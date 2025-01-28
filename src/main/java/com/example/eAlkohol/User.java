@@ -2,14 +2,12 @@ package com.example.eAlkohol;
 
 import jakarta.persistence.*;
 
-import java.util.Set;
-
 @Entity
 @Table(name = "Users")
-public class Users {
-    @ManyToOne
-    @JoinColumn(name="id_u", nullable=false)
-    private Comments comments;
+public class User {
+//    @ManyToOne
+//    @JoinColumn(name="id_u", nullable=false)
+//    private Comments comments;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
