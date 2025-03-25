@@ -1,17 +1,22 @@
 package com.example.eAlkohol;
 
+import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class UserController {
 
     private final UsersService usersService;
+    private final AlcoholRepository alcoholRepository;
 
-    public UserController(UsersService usersService) {
+    public UserController(UsersService usersService, AlcoholRepository alcoholRepository) {
         this.usersService = usersService;
+        this.alcoholRepository = alcoholRepository;
     }
 
     @GetMapping("/")
@@ -21,7 +26,9 @@ public class UserController {
     }
 
     @GetMapping("/main")
-    public String main() {
+    public String main(Model model) {
+        List<Alcoholinfo> alcohols = alcoholRepository.findAll();
+        model.addAttribute("alcohols", alcohols);
         // Nazwa pliku HTML w src/main/resources/templates
         return "main"; // Bez ".html"
     }
