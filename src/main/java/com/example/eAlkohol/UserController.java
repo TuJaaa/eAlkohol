@@ -12,11 +12,9 @@ import java.util.List;
 public class UserController {
 
     private final UsersService usersService;
-    private final AlcoholRepository alcoholRepository;
 
-    public UserController(UsersService usersService, AlcoholRepository alcoholRepository) {
+    public UserController(UsersService usersService) {
         this.usersService = usersService;
-        this.alcoholRepository = alcoholRepository;
     }
 
     @GetMapping("/")
@@ -27,8 +25,7 @@ public class UserController {
 
     @GetMapping("/main")
     public String main(Model model) {
-        List<Alcoholinfo> alcohols = alcoholRepository.findAll();
-        model.addAttribute("alcohols", alcohols);
+        model.addAttribute("alcohols", usersService.getAllAlcohols());
         // Nazwa pliku HTML w src/main/resources/templates
         return "main"; // Bez ".html"
     }

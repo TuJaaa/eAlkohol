@@ -20,6 +20,10 @@ public class UsersService {
     @Autowired
     private PasswordEncoderImpl passwordEncoder;
 
+    public List<Alcoholinfo> getAllAlcohols() {
+        return userRepository.findAllAlcohols();
+    }
+
     public @ResponseBody void loginUser(@RequestParam String username, @RequestParam String password) {
         List<User> users = userRepository.findAll();
         for(User user : userRepository.findAll()) {
